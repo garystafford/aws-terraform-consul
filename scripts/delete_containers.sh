@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Deploys a cluster of (3) Consul Servers to (3) EC2 Instances
+# Delete a cluster of (3) Consul Servers containers to (3) EC2 Instances
 
 # set -e
 

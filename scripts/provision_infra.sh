@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Provision infrastructure
+# Provision AWS infrastructure
 
 set -e
 
