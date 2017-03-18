@@ -5,7 +5,8 @@
 set -e
 
 # deploy consul-server-1
-echo "Testing Consul cluster..."
+echo " "
+echo "*** Testing Consul cluster ***"
 
 ec2_public_ip=$(aws ec2 describe-instances \
   --filters Name='tag:Name,Values=tf-instance-consul-server-1' \
@@ -27,4 +28,5 @@ curl -s "${ec2_public_ip}:8500/v1/kv/tmp/value/${key}?raw" | \
 echo "Deleting key/value pair..."
 curl -s -X DELETE "${ec2_public_ip}:8500/v1/kv/tmp/value/${key}"  > /dev/null
 
-echo "Test complete."
+echo " "
+echo "*** Testing Consul cluster complete ***"

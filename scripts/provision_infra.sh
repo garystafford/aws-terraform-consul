@@ -4,7 +4,8 @@
 
 set -e
 
-echo "Building AWS infrastructure..."
+echo " "
+echo "*** Building AWS infrastructure ***"
 
 cd ../tf_env_aws/
 
@@ -17,4 +18,5 @@ terraform remote config \
 terraform plan
 terraform apply
 
-echo "Building AWS infrastructure complete..."
+echo " "
+echo "*** Building AWS infrastructure complete ***"

@@ -4,7 +4,8 @@
 
 set -e
 
-echo "Destroying AWS infrastructure..."
+echo " "
+echo "*** Destroying AWS infrastructure ***"
 
 cd ../tf_env_aws/
 
@@ -16,4 +17,5 @@ terraform remote config \
 
 terraform destroy -force
 
-echo "Destroying AWS infrastructure complete..."
+echo " "
+echo "*** Destroying AWS infrastructure complete ***"
