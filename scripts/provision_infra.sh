@@ -6,7 +6,7 @@ set -e
 
 echo "Building AWS infrastructure..."
 
-cd tf_env_aws/
+cd ../tf_env_aws/
 
 terraform remote config \
   -backend=s3 \
