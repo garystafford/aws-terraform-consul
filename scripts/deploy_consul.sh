@@ -21,7 +21,8 @@ ec2_public_ip=$(aws ec2 describe-instances \
   --output text --query 'Reservations[*].Instances[*].PublicIpAddress')
 consul_server="consul-server-1"
 
-ssh -oStrictHostKeyChecking=no -T -i ~/.ssh/consul_aws_rsa ubuntu@${ec2_public_ip} << EOSSH
+ssh -oStrictHostKeyChecking=no -T \
+  -i ~/.ssh/consul_aws_rsa ubuntu@${ec2_public_ip} << EOSSH
   docker run -d \
     --net=host \
     --hostname ${consul_server} \
@@ -53,7 +54,8 @@ ec2_public_ip=$(aws ec2 describe-instances \
   --output text --query 'Reservations[*].Instances[*].PublicIpAddress')
 consul_server="consul-server-2"
 
-ssh -oStrictHostKeyChecking=no -T -i ~/.ssh/consul_aws_rsa ubuntu@${ec2_public_ip} << EOSSH
+ssh -oStrictHostKeyChecking=no -T \
+  -i ~/.ssh/consul_aws_rsa ubuntu@${ec2_public_ip} << EOSSH
   docker run -d \
     --net=host \
     --hostname ${consul_server} \
@@ -85,7 +87,8 @@ ec2_public_ip=$(aws ec2 describe-instances \
   --output text --query 'Reservations[*].Instances[*].PublicIpAddress')
 consul_server="consul-server-3"
 
-ssh -oStrictHostKeyChecking=no -T -i ~/.ssh/consul_aws_rsa ubuntu@${ec2_public_ip} << EOSSH
+ssh -oStrictHostKeyChecking=no -T \
+  -i ~/.ssh/consul_aws_rsa ubuntu@${ec2_public_ip} << EOSSH
   docker run -d \
     --net=host \
     --hostname ${consul_server} \
