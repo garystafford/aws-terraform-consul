@@ -15,8 +15,8 @@ terraform remote config \
   -backend-config="key=terraform_consul.tfstate" \
   -backend-config="region=us-east-1"
 
-terraform plan
-terraform apply
+terraform plan -no-color
+terraform apply -no-color
 
 echo " "
 echo "*** Building AWS infrastructure complete ***"

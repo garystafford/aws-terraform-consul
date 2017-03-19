@@ -15,7 +15,7 @@ terraform remote config \
   -backend-config="key=terraform_consul.tfstate" \
   -backend-config="region=us-east-1"
 
-terraform destroy -force
+terraform destroy -force -no-color
 
 echo " "
 echo "*** Destroying AWS infrastructure complete ***"
