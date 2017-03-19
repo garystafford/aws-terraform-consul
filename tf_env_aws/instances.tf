@@ -12,7 +12,7 @@ resource "aws_instance" "consul_server_1" {
   connection {
     user        = "ubuntu"
     private_key = "${file("~/.ssh/consul_aws_rsa")}"
-    timeout     = "${connection_timeout}"
+    timeout     = "${var.connection_timeout}"
   }
 
   provisioner "remote-exec" {
@@ -43,7 +43,7 @@ resource "aws_instance" "consul_server_2" {
   connection {
     user        = "ubuntu"
     private_key = "${file("~/.ssh/consul_aws_rsa")}"
-    timeout     = "${connection_timeout}"
+    timeout     = "${var.connection_timeout}"
   }
 
   provisioner "remote-exec" {
@@ -74,7 +74,7 @@ resource "aws_instance" "consul_server_3" {
   connection {
     user        = "ubuntu"
     private_key = "${file("~/.ssh/consul_aws_rsa")}"
-    timeout     = "${connection_timeout}"
+    timeout     = "${var.connection_timeout}"
   }
 
   provisioner "remote-exec" {
