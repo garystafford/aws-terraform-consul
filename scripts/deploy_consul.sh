@@ -31,6 +31,7 @@ ssh -oStrictHostKeyChecking=no -T \
     --env "CONSUL_CLIENT_INTERFACE=eth0" \
     --env "CONSUL_BIND_INTERFACE=eth0" \
     --volume /home/ubuntu/consul/data:/consul/data \
+    --volume /home/ubuntu/consul/config:/consul/config \
     --publish 8500:8500 \
     consul:latest \
     consul agent -server -ui -client=0.0.0.0 \
@@ -64,6 +65,7 @@ ssh -oStrictHostKeyChecking=no -T \
     --env "CONSUL_CLIENT_INTERFACE=eth0" \
     --env "CONSUL_BIND_INTERFACE=eth0" \
     --volume /home/ubuntu/consul/data:/consul/data \
+    --volume /home/ubuntu/consul/config:/consul/config \
     --publish 8500:8500 \
     consul:latest \
     consul agent -server -ui -client=0.0.0.0 \
@@ -97,6 +99,7 @@ ssh -oStrictHostKeyChecking=no -T \
     --env "CONSUL_CLIENT_INTERFACE=eth0" \
     --env "CONSUL_BIND_INTERFACE=eth0" \
     --volume /home/ubuntu/consul/data:/consul/data \
+    --volume /home/ubuntu/consul/config:/consul/config \
     --publish 8500:8500 \
     consul:latest \
     consul agent -server -ui -client=0.0.0.0 \
