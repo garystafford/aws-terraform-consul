@@ -9,6 +9,18 @@ resource "aws_instance" "consul_server_1" {
   vpc_security_group_ids = ["${aws_security_group.consul.id}", "${aws_security_group.consul_internet_access.id}"]
   subnet_id              = "${aws_subnet.consul_1.id}"
 
+  connection {
+    user        = "ubuntu"
+    private_key = "${file("~/.ssh/consul_aws_rsa")}"
+    timeout     = "${connection_timeout}"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "mkdir -p consul/data"
+    ]
+  }
+
   tags {
     Owner       = "${var.owner}"
     Terraform   = true
@@ -28,6 +40,18 @@ resource "aws_instance" "consul_server_2" {
   vpc_security_group_ids = ["${aws_security_group.consul.id}", "${aws_security_group.consul_internet_access.id}"]
   subnet_id              = "${aws_subnet.consul_2.id}"
 
+  connection {
+    user        = "ubuntu"
+    private_key = "${file("~/.ssh/consul_aws_rsa")}"
+    timeout     = "${connection_timeout}"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "mkdir -p consul/data"
+    ]
+  }
+
   tags {
     Owner       = "${var.owner}"
     Terraform   = true
@@ -46,6 +70,18 @@ resource "aws_instance" "consul_server_3" {
   key_name               = "${aws_key_pair.consul_auth.id}"
   vpc_security_group_ids = ["${aws_security_group.consul.id}", "${aws_security_group.consul_internet_access.id}"]
   subnet_id              = "${aws_subnet.consul_3.id}"
+
+  connection {
+    user        = "ubuntu"
+    private_key = "${file("~/.ssh/consul_aws_rsa")}"
+    timeout     = "${connection_timeout}"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "mkdir -p consul/data"
+    ]
+  }
 
   tags {
     Owner       = "${var.owner}"
