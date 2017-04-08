@@ -56,6 +56,33 @@ aws cloudformation create-stack \
   --capabilities CAPABILITY_IAM
 ```
 
+**Edge Template**
+Docker for AWS 17.04.0-ce-aws1
+
+```bash
+aws cloudformation create-stack \
+  --stack-name consul-demo \
+  --template-url "https://editions-us-east-1.s3.amazonaws.com/aws/edge/Docker.tmpl" \
+  --parameters \
+    \
+    ParameterKey=ManagerSize,ParameterValue=1 \
+    ParameterKey=ClusterSize,ParameterValue=3 \
+    \
+    ParameterKey=KeyName,ParameterValue=consul_aws \
+    ParameterKey=EnableSystemPrune,ParameterValue=yes \
+    ParameterKey=EnableCloudWatchLogs,ParameterValue=yes \
+    \
+    ParameterKey=ManagerInstanceType,ParameterValue=t2.micro \
+    ParameterKey=ManagerDiskSize,ParameterValue=20 \
+    ParameterKey=ManagerDiskType,ParameterValue=standard \
+    \
+    ParameterKey=InstanceType,ParameterValue=t2.micro \
+    ParameterKey=WorkerDiskSize,ParameterValue=20 \
+    ParameterKey=WorkerDiskType,ParameterValue=standard \
+    \
+  --capabilities CAPABILITY_IAM
+```
+
 ```text
 {
    "StackId": "arn:aws:cloudformation:us-east-1:931066906971:stack/consul-demo/5b683ec0-011c-11e7-a68b-50d5ca6e6082"
@@ -66,8 +93,8 @@ aws cloudformation create-stack \
 aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE
 aws cloudformation delete-stack --stack-name consul-demo
 aws ec2 describe-instances --output text --query 'Reservations[*].Instances[*].PublicIpAddress'
-aws ec2 describe-instances --filters Name='tag:Name,Values=tf-instance-consul-server-1' --output text --query 'Reservations[*].Instances[*].PublicIpAddress'
-tf-instance-test-docker-ce
+aws ec2 describe-instances --filters Name='tag:Name,Values=consul-demo-Manager' --output text --query 'Reservations[*].Instances[*].PublicIpAddress'
+aws ec2 describe-instances --filters Name='tag:Name,Values=consul-demo-worker' --output text --query 'Reservations[*].Instances[*].PublicIpAddress'
 aws ec2 describe-instances --filters Name='tag:Name,Values=tf-instance-consul-server-1' --output text --query 'Reservations[*].Instances[*].PrivateIpAddress'
 ```
 
