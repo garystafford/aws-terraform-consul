@@ -5,7 +5,7 @@
 set -e
 
 echo " "
-echo "*** Building AWS ADOP infrastructure ***"
+echo "*** Building AWS Consul infrastructure ***"
 
 terraform remote config \
   -backend=s3 \
@@ -17,4 +17,4 @@ terraform plan -no-color
 terraform apply -no-color
 
 echo " "
-echo "*** Building AWS ADOP infrastructure complete ***"
+echo "*** Building AWS Consul infrastructure complete ***"
