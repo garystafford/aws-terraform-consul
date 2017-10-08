@@ -1,4 +1,4 @@
-variable "aws_region" {
+  variable "aws_region" {
   description = "Default AWS Region for the VPC"
   default = "us-east-1"
 }
@@ -8,7 +8,7 @@ variable "public_key_path" {
 }
 
 variable "aws_key_name" {
-  default = "consul_aws"
+  default = "consul_aws_rsa"
 }
 
 variable "connection_timeout" {
