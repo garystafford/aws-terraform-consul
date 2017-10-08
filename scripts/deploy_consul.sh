@@ -2,7 +2,7 @@
 
 # Deploys a cluster of (3) Consul Servers to (3) EC2 Instances
 
-set -e
+set -ex
 
 # value used by all consul clients
 export ec2_server1_private_ip=$(aws ec2 describe-instances \

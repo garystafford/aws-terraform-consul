@@ -2,7 +2,7 @@
 
 # Provision AWS infrastructure
 
-set -e
+set -ex
 
 echo " "
 echo "*** Building AWS Consul infrastructure ***"

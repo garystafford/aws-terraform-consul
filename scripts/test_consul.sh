@@ -2,7 +2,7 @@
 
 # Test Consul cluster by creating/reading/deleting k/v pair
 
-set -e
+set -ex
 
 # deploy consul-server-1
 echo " "
