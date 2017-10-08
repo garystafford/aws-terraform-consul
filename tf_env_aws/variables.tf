@@ -36,9 +36,9 @@ variable "consul_subnet_cidr3" {
 }
 
 variable "aws_amis_base" {
-  description = "aws-us-east-1 Ubuntu 16.04 LTS w/ Docker 17.03.0-ce"
+  description = "aws-us-east-1 Ubuntu 16.04 LTS w/ Docker version 17.09.0-ce"
   default = {
-    us-east-1 = "ami-35d57f23"
+    us-east-1 = "ami-d9dd1fa3"
   }
 }
 
