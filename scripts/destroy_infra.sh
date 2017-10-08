@@ -13,7 +13,7 @@ terraform init \
   -backend-config="bucket=tf-remote-state-gstafford" \
   -backend-config="key=terraform_adop.tfstate" \
   -backend-config="region=us-east-1" \
-  -backend=true -force-copy -get=true -input=false
+  -backend=true -force-copy -get=true -input=false -no-color
 
 terraform destroy -force -no-color
 
