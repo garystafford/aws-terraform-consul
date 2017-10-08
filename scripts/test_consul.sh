@@ -1,4 +1,4 @@
-#!/bin/sh
+!#/bin/bash
 
 # Test Consul cluster by creating/reading/deleting k/v pair
 
