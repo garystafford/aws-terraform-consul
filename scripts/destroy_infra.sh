@@ -2,7 +2,7 @@
 
 # Destroy AWS Infrastructure
 
-set -ex
+set -e
 
 echo " "
 echo "*** Destroying AWS infrastructure ***"
